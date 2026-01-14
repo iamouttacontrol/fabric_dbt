@@ -1,0 +1,1317 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "covid_cases",
+        "sourceLineageTag": "[demo].[covid_cases]",
+        "columns": [
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "total_cases",
+            "dataType": "int64",
+            "sourceColumn": "total_cases",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "total_cases",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "new_cases",
+            "dataType": "int64",
+            "sourceColumn": "new_cases",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "new_cases",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "covid_cases",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "demo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "covid_cases_de_id",
+        "sourceLineageTag": "[demo].[covid_cases_de_id]",
+        "columns": [
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "total_cases_latest",
+            "dataType": "int64",
+            "sourceColumn": "total_cases_latest",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "total_cases_latest",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "last_date_with_value",
+            "dataType": "dateTime",
+            "sourceColumn": "last_date_with_value",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "last_date_with_value",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "covid_cases_de_id",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "demo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "covid_cases_per_country",
+        "sourceLineageTag": "[demo].[covid_cases_per_country]",
+        "columns": [
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "total_cases",
+            "dataType": "int64",
+            "sourceColumn": "total_cases",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "total_cases",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "total_cases_rank",
+            "dataType": "int64",
+            "sourceColumn": "total_cases_rank",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "total_cases_rank",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "covid_cases_per_country",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "demo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "stg_covid_cases",
+        "sourceLineageTag": "[demo].[stg_covid_cases]",
+        "columns": [
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "date",
+            "dataType": "dateTime",
+            "sourceColumn": "date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "total_cases",
+            "dataType": "int64",
+            "sourceColumn": "total_cases",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "total_cases",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "new_cases",
+            "dataType": "int64",
+            "sourceColumn": "new_cases",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "new_cases",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "new_cases_smoothed",
+            "dataType": "double",
+            "sourceColumn": "new_cases_smoothed",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_cases_smoothed",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_cases_per_million",
+            "dataType": "double",
+            "sourceColumn": "total_cases_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "total_cases_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_cases_per_million",
+            "dataType": "double",
+            "sourceColumn": "new_cases_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_cases_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_cases_smoothed_per_million",
+            "dataType": "double",
+            "sourceColumn": "new_cases_smoothed_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_cases_smoothed_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_deaths",
+            "dataType": "int64",
+            "sourceColumn": "total_deaths",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "total_deaths",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "new_deaths",
+            "dataType": "int64",
+            "sourceColumn": "new_deaths",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "new_deaths",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "new_deaths_smoothed",
+            "dataType": "double",
+            "sourceColumn": "new_deaths_smoothed",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_deaths_smoothed",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_deaths_per_million",
+            "dataType": "double",
+            "sourceColumn": "total_deaths_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "total_deaths_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_deaths_per_million",
+            "dataType": "double",
+            "sourceColumn": "new_deaths_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_deaths_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_deaths_smoothed_per_million",
+            "dataType": "double",
+            "sourceColumn": "new_deaths_smoothed_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_deaths_smoothed_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "excess_mortality",
+            "dataType": "double",
+            "sourceColumn": "excess_mortality",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "excess_mortality",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "excess_mortality_cumulative",
+            "dataType": "double",
+            "sourceColumn": "excess_mortality_cumulative",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "excess_mortality_cumulative",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "excess_mortality_cumulative_absolute",
+            "dataType": "double",
+            "sourceColumn": "excess_mortality_cumulative_absolute",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "excess_mortality_cumulative_absolute",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "excess_mortality_cumulative_per_million",
+            "dataType": "double",
+            "sourceColumn": "excess_mortality_cumulative_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "excess_mortality_cumulative_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "hosp_patients",
+            "dataType": "int64",
+            "sourceColumn": "hosp_patients",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "hosp_patients",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "hosp_patients_per_million",
+            "dataType": "double",
+            "sourceColumn": "hosp_patients_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "hosp_patients_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "weekly_hosp_admissions",
+            "dataType": "int64",
+            "sourceColumn": "weekly_hosp_admissions",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "weekly_hosp_admissions",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "weekly_hosp_admissions_per_million",
+            "dataType": "double",
+            "sourceColumn": "weekly_hosp_admissions_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "weekly_hosp_admissions_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "icu_patients",
+            "dataType": "int64",
+            "sourceColumn": "icu_patients",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "icu_patients",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "icu_patients_per_million",
+            "dataType": "double",
+            "sourceColumn": "icu_patients_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "icu_patients_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "weekly_icu_admissions",
+            "dataType": "int64",
+            "sourceColumn": "weekly_icu_admissions",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "weekly_icu_admissions",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "weekly_icu_admissions_per_million",
+            "dataType": "double",
+            "sourceColumn": "weekly_icu_admissions_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "weekly_icu_admissions_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "stringency_index",
+            "dataType": "double",
+            "sourceColumn": "stringency_index",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "stringency_index",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "reproduction_rate",
+            "dataType": "double",
+            "sourceColumn": "reproduction_rate",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "reproduction_rate",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_tests",
+            "dataType": "int64",
+            "sourceColumn": "total_tests",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "total_tests",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "new_tests",
+            "dataType": "int64",
+            "sourceColumn": "new_tests",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "new_tests",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "total_tests_per_thousand",
+            "dataType": "double",
+            "sourceColumn": "total_tests_per_thousand",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "total_tests_per_thousand",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_tests_per_thousand",
+            "dataType": "double",
+            "sourceColumn": "new_tests_per_thousand",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_tests_per_thousand",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_tests_smoothed",
+            "dataType": "int64",
+            "sourceColumn": "new_tests_smoothed",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "new_tests_smoothed",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "new_tests_smoothed_per_thousand",
+            "dataType": "double",
+            "sourceColumn": "new_tests_smoothed_per_thousand",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_tests_smoothed_per_thousand",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "positive_rate",
+            "dataType": "double",
+            "sourceColumn": "positive_rate",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "positive_rate",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "tests_per_case",
+            "dataType": "double",
+            "sourceColumn": "tests_per_case",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "tests_per_case",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_vaccinations",
+            "dataType": "double",
+            "sourceColumn": "total_vaccinations",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "total_vaccinations",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "people_vaccinated",
+            "dataType": "double",
+            "sourceColumn": "people_vaccinated",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "people_vaccinated",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "people_fully_vaccinated",
+            "dataType": "double",
+            "sourceColumn": "people_fully_vaccinated",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "people_fully_vaccinated",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_boosters",
+            "dataType": "int64",
+            "sourceColumn": "total_boosters",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "total_boosters",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "new_vaccinations",
+            "dataType": "double",
+            "sourceColumn": "new_vaccinations",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_vaccinations",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_vaccinations_smoothed",
+            "dataType": "double",
+            "sourceColumn": "new_vaccinations_smoothed",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_vaccinations_smoothed",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_vaccinations_per_hundred",
+            "dataType": "double",
+            "sourceColumn": "total_vaccinations_per_hundred",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "total_vaccinations_per_hundred",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "people_vaccinated_per_hundred",
+            "dataType": "double",
+            "sourceColumn": "people_vaccinated_per_hundred",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "people_vaccinated_per_hundred",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "people_fully_vaccinated_per_hundred",
+            "dataType": "double",
+            "sourceColumn": "people_fully_vaccinated_per_hundred",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "people_fully_vaccinated_per_hundred",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "total_boosters_per_hundred",
+            "dataType": "double",
+            "sourceColumn": "total_boosters_per_hundred",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "total_boosters_per_hundred",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_vaccinations_smoothed_per_million",
+            "dataType": "double",
+            "sourceColumn": "new_vaccinations_smoothed_per_million",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_vaccinations_smoothed_per_million",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_people_vaccinated_smoothed",
+            "dataType": "double",
+            "sourceColumn": "new_people_vaccinated_smoothed",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_people_vaccinated_smoothed",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "new_people_vaccinated_smoothed_per_hundred",
+            "dataType": "double",
+            "sourceColumn": "new_people_vaccinated_smoothed_per_hundred",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "new_people_vaccinated_smoothed_per_hundred",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "code",
+            "dataType": "string",
+            "sourceColumn": "code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "continent",
+            "dataType": "string",
+            "sourceColumn": "continent",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "continent",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "population",
+            "dataType": "int64",
+            "sourceColumn": "population",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "population",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "population_density",
+            "dataType": "double",
+            "sourceColumn": "population_density",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "population_density",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "median_age",
+            "dataType": "double",
+            "sourceColumn": "median_age",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "median_age",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "life_expectancy",
+            "dataType": "double",
+            "sourceColumn": "life_expectancy",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "life_expectancy",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "gdp_per_capita",
+            "dataType": "double",
+            "sourceColumn": "gdp_per_capita",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "gdp_per_capita",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "extreme_poverty",
+            "dataType": "double",
+            "sourceColumn": "extreme_poverty",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "extreme_poverty",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "diabetes_prevalence",
+            "dataType": "double",
+            "sourceColumn": "diabetes_prevalence",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "diabetes_prevalence",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "handwashing_facilities",
+            "dataType": "double",
+            "sourceColumn": "handwashing_facilities",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "handwashing_facilities",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "hospital_beds_per_thousand",
+            "dataType": "double",
+            "sourceColumn": "hospital_beds_per_thousand",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "hospital_beds_per_thousand",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "human_development_index",
+            "dataType": "string",
+            "sourceColumn": "human_development_index",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "human_development_index",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "stg_covid_cases",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "demo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

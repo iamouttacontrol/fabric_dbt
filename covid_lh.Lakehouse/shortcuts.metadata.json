@@ -1,0 +1,14 @@
+[
+  {
+    "name": "ShortCUT_covid-cases",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/dbo/covid-cases",
+        "itemId": "00000000-0000-0000-0000-000000000000",
+        "workspaceId": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+  }
+]
